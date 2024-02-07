@@ -1,5 +1,4 @@
 package SeleniumAutomation;
-
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -35,7 +34,7 @@ public class StockPrices {
         HashMap<String,Double> map=new HashMap<String,Double>();
         int size = dataTable.size();
         System.out.println("Size:" + size);
-        for (int i = 2; i < 10; i++) {
+        for (int i = 2; i < size; i++) {
             String data = driver.findElement(By.xpath("//table[contains(@class,'dataTable')]//tr[" + i + "]/td[1]")).getText();
             String str = driver.findElement(By.xpath("//table[contains(@class,'dataTable')]//tr[" + i + "]/td[4]")).getText();
             double val = Double.parseDouble(str.replaceAll(",", ""));
@@ -86,7 +85,7 @@ public class StockPrices {
         HashMap<String, Double> map = new HashMap<>();
         int size = dataTable.size();
         System.out.println("Size:" + size);
-        for (int i = 2; i < 10; i++) {
+        for (int i = 2; i < size; i++) {
             String data = driver.findElement(By.xpath("//table[contains(@class,'dataTable')]//tr[" + i + "]/td[1]")).getText();
             String str = driver.findElement(By.xpath("//table[contains(@class,'dataTable')]//tr[" + i + "]/td[4]")).getText();
             double val = Double.parseDouble(str.replaceAll(",", ""));
